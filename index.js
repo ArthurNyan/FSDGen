@@ -29,7 +29,7 @@ if (command === 'slice') {
         process.exit(1);
     }
 
-    const sliceScriptPath = path.resolve(__dirname, 'core', 'createSlice', 'index.js');
+    const sliceScriptPath = path.resolve(__dirname, 'core', 'features', 'createSlice', 'index.js');
     exec(`node ${sliceScriptPath} ${layer} ${sliceName}`, (error, stdout, stderr) => {
         if (error) {
             console.error(`Error: ${error.message}`);
@@ -48,7 +48,7 @@ if (command === 'slice') {
         process.exit(1);
     }
 
-    const uiScriptPath = path.resolve(__dirname, 'core', 'createUiComponent', 'index.js');
+    const uiScriptPath = path.resolve(__dirname, 'core', 'features', 'createUiComponent', 'index.js');
     exec(`node ${uiScriptPath} ${componentName}`, (error, stdout, stderr) => {
         if (error) {
             console.error(`Error: ${error.message}`);

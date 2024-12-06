@@ -1,5 +1,5 @@
 const fs = require('fs/promises');
-const resolveRoot = require('../../helpers/resolveRoot');
+const resolveRoot = require('../../lib/resolveRoot');
 const schemaTypeTemplate = require('./schemaTypeTemplate');
 
 module.exports = async (layer, sliceName) => {

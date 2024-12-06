@@ -1,4 +1,4 @@
-const firstCharUpperCase = require('../../helpers/firstCharUpperCase');
+const firstCharUpperCase = require('../../lib/firstCharUpperCase');
 
 module.exports = (
   sliceName,
