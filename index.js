@@ -28,7 +28,7 @@ if (command === 'slice') {
         process.exit(1);
     }
 
-    exec(`node ./createSlice/index.js ${layer} ${sliceName}`, (error, stdout, stderr) => {
+    exec(`node ./core/createSlice/index.js ${layer} ${sliceName}`, (error, stdout, stderr) => {
         if (error) {
             console.error(`Error: ${error.message}`);
             return;
@@ -46,7 +46,7 @@ if (command === 'slice') {
         process.exit(1);
     }
 
-    exec(`node ./createUiComponent/index.js ${componentName}`, (error, stdout, stderr) => {
+    exec(`node ./core/createUiComponent/index.js ${componentName}`, (error, stdout, stderr) => {
         if (error) {
             console.error(`Error: ${error.message}`);
             return;

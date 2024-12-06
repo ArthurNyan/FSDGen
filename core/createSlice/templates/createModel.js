@@ -1,6 +1,5 @@
 const fs = require('fs/promises');
 const resolveRoot = require('../../helpers/resolveRoot');
-const reduxSliceTemplate = require('./reduxSliceTemplate');
 const schemaTypeTemplate = require('./schemaTypeTemplate');
 
 module.exports = async (layer, sliceName) => {
@@ -11,7 +10,6 @@ module.exports = async (layer, sliceName) => {
     try {
       await fs.mkdir(resolveModelPath());
       await fs.mkdir(resolveModelPath('types'));
-      await fs.mkdir(resolveModelPath('slices'));
       await fs.mkdir(resolveModelPath('selectors'));
       await fs.mkdir(resolveModelPath('services'));
     } catch (e) {
@@ -22,16 +20,6 @@ module.exports = async (layer, sliceName) => {
     }
   };
 
-  const createReduxSlice = async () => {
-    try {
-      await fs.writeFile(
-        resolveModelPath('slices', `${sliceName}Slice.ts`),
-        reduxSliceTemplate(sliceName),
-      );
-    } catch (e) {
-      console.error('Не удалось создать редакс слайс', e);
-    }
-  };
 
   const createSchemaType = async () => {
     try {
@@ -45,6 +33,5 @@ module.exports = async (layer, sliceName) => {
   };
 
   await createModelStructure();
-  await createReduxSlice();
   await createSchemaType();
 };

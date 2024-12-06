@@ -2,10 +2,6 @@
   "name": "fsd-gen",
   "version": "0.1.0",
   "main": "index.js",
-  "scripts": {
-    "generate:slice": "node ./createSlice/index.js",
-    "generate:UI": "node ./createUiComponent/index.js"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
