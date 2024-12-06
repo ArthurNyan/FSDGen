@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const { exec } = require('child_process');
+const path = require('path');
 
 const command = process.argv[2];
 const layer = process.argv[3];
@@ -28,7 +29,8 @@ if (command === 'slice') {
         process.exit(1);
     }
 
-    exec(`node ./core/createSlice/index.js ${layer} ${sliceName}`, (error, stdout, stderr) => {
+    const sliceScriptPath = path.resolve(__dirname, 'core', 'createSlice', 'index.js');
+    exec(`node ${sliceScriptPath} ${layer} ${sliceName}`, (error, stdout, stderr) => {
         if (error) {
             console.error(`Error: ${error.message}`);
             return;
@@ -46,7 +48,8 @@ if (command === 'slice') {
         process.exit(1);
     }
 
-    exec(`node ./core/createUiComponent/index.js ${componentName}`, (error, stdout, stderr) => {
+    const uiScriptPath = path.resolve(__dirname, 'core', 'createUiComponent', 'index.js');
+    exec(`node ${uiScriptPath} ${componentName}`, (error, stdout, stderr) => {
         if (error) {
             console.error(`Error: ${error.message}`);
             return;

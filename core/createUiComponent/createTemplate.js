@@ -4,7 +4,7 @@ const createPublicApi = require('./templates/createPublicApi');
 
 module.exports = async (layer, sliceName) => {
   const resolveUIPath = (...segments) =>
-    resolveRoot('src', layer, 'ui', ...segments);
+    resolveRoot(process.cwd(), 'src', layer, 'ui', ...segments);
 
   await createUI(layer, sliceName, resolveUIPath);
   await createPublicApi(layer, sliceName);
