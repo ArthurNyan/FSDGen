@@ -1,8 +1,8 @@
 const fs = require('fs/promises');
-const firstCharUpperCase = require('../helpers/firstCharUpperCase');
-const componentTemplate = require('../helpers/componentTemplate');
-const storyTemplate = require('./storyTemplate');
-const styleTemplate = require('./styleTemplate');
+const firstCharUpperCase = require('./firstCharUpperCase');
+const componentTemplate = require('./componentTemplate');
+const storyTemplate = require('../createUiComponent/templates/storyTemplate');
+const styleTemplate = require('../createUiComponent/templates/styleTemplate');
 
 module.exports = async (layer, sliceName, resolveUIPath) => {
   const createComponent = async () => {

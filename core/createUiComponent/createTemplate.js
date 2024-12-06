@@ -1,6 +1,6 @@
 const resolveRoot = require('../helpers/resolveRoot');
-const createUI = require('./createUI');
-const createPublicApi = require('./createPublicApi');
+const createUI = require('../helpers/createUI');
+const createPublicApi = require('./templates/createPublicApi');
 
 module.exports = async (layer, sliceName) => {
   const resolveUIPath = (...segments) =>
